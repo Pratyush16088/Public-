@@ -1,0 +1,95 @@
+//1..Given an array of integers, write a Java program to find and print
+//    all the duplicate elements.
+
+public class ArrayDuplicateElement{
+
+	public static void main(String[] args) {
+		int arr[] = {1,2,3,40,65,40,8, 8,20};
+		System.out.println("Duplicate elements in given array: ");
+        for (int i = 0; i < arr.length; i++) 
+        {
+            for (int j = i + 1; j < arr.length; j++)
+            {
+                if (arr[i] == arr[j]) 
+                {
+                    System.out.println(arr[j]);
+                }
+            }
+        }
+    }	
+
+	}
+
+/**output
+Duplicate elements in given array: 
+40
+8
+*/
+----------------------------------------------------------------------------------------------
+//  2.Write a Java function to check if two strings are
+//     anagrams of each other.
+import java.util.Arrays;
+
+public class AnagramCheck {
+
+    public static void main(String[] args) {
+        
+        String str1 = "tom";
+        String str2 = "mot";
+
+        if (isAnagram(str1, str2)) {
+            System.out.println(str1 + " and " + str2 + " are anagrams.");
+        } else {
+            System.out.println(str1 + " and " + str2 + " are not anagrams.");
+        }
+    }
+
+    public static boolean isAnagram(String str1, String str2) {
+        // Check if the strings are the same length.
+        if (str1.length() != str2.length()) 
+        {
+            return false;
+        }
+        char[] charArray1 = str1.toCharArray();
+        char[] charArray2 = str2.toCharArray();
+        Arrays.sort(charArray1);
+        Arrays.sort(charArray2);
+        return Arrays.equals(charArray1, charArray2);
+    }
+}
+//output
+//tom and mot are anagrams.
+----------------------------------------------------------
+3..Write a Java program to print a right-angled triangle of stars. 
+//   The number of rows should be taken as input.
+import java.util.Scanner;
+
+public class RightAngelTriangle {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of rows:");
+        int row = sc.nextInt();
+
+        for (int i = 1; i <= row; i++) // outer loop for row
+        	{
+            for (int j = 1; j <= i; j++) // // Inner loop for printing stars in each row
+            {
+                System.out.print("* ");
+            }
+            System.out.println(); // Move to the next line after each row
+        }
+    }
+    }
+
+/**output
+Enter the number of rows:
+3
+* 
+* * 
+* * * 
+
+
+*/
+
+
